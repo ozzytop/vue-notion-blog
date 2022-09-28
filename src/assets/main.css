@@ -1,0 +1,98 @@
+body {
+    color: #444;
+    font-family: 'Roboto';
+}
+
+.home,  
+.single-post,
+.about,
+.projects {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* Blog Page */
+.post-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: baseline;
+    margin: 10px 0;
+    padding: 8px 16px;
+    border-bottom: 1px solid #333;
+}
+
+.post-date {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.post-title {
+    font-size:22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.post-title a {
+    text-decoration: none;
+    color: #333;
+}
+.post-tag-wrapper {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 20px;
+}
+.post-tag {
+    margin: 0 8px 0 0;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: .8rem;
+}
+.post-content {
+    font-size:14px;
+}
+
+/* ************ */
+
+/* Single Post page */
+
+.single-post-content {
+    text-align: left;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 4px;
+    display: inline-block;
+}
+
+/* ************ */
+
+/* Projects page */
+
+.projects__content {
+    text-align: left;
+}
+
+/* ************ */
+
+/* About page */
+
+.about__content {
+    text-align: left;
+}
+
+/* ************ */
+
+
+/* Colors */
+.orange {
+    color:orange;
+}
+
+.green { 
+    color:green;
+}
+
+
+
+/* ************ */
