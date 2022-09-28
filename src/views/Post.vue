@@ -3,7 +3,7 @@
         <h1>{{ title }}</h1>
         
         <div class="single-post-content">
-            <span class="post" v-for="item in content" v-html="item" >
+            <span class="post" v-for="(item, key) in content" v-html="item" :key="key">
                 
             </span>
         </div>

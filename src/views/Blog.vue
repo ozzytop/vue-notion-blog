@@ -34,7 +34,7 @@
 import { ref, onMounted } from 'vue'
 //const { format } = require("date-fns");
 import { formatDistanceToNow } from 'date-fns'
-import { convertColor, parseRichContent } from '../helpers/index'
+import { convertColor } from '../helpers/index'
 import { getDatabaseInformation } from '../services/DatabaseService'
 
 // @ is an alias to /src
