@@ -31,6 +31,10 @@ app.get('/secret', (req, res) => {
     res.send('GET request to the homepage')
 })
 
+app.get('/keys', (req, res) => {
+    res.send(process.env.NOTION_API_KEY)
+})
+
 
 // Get Notion databases information
 app.get('/api/databases', (req, res) => {
@@ -71,7 +75,7 @@ app.get('/api/pages/:id', (req, res) => {
         },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                return res.status(500).json({ type: 'error', message: error });
+                return res.status(500).json({ type: 'error', message: response });
             }
             res.json(JSON.parse(body));
         }
