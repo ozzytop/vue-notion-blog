@@ -17,14 +17,16 @@ export async function createUser(data) {
 
 export async function getDatabaseInformation() {
 
-    const url = `api/databases`;
-            
+    const url = `${process.env.VUE_APP_NOTION_API}/api/databases`;
+    
     let axiosConfig = {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
         }
     };
+    
+    console.log(url);
     const response = await axios.get(url, axiosConfig)
     const posts = response.data.results;
     return posts;
@@ -35,7 +37,7 @@ export async function getDatabaseInformation() {
 export async function getSingleDatabase(id) {
     
     console.log(id)
-    const url = `api/pages/${id}`;
+    const url = `${process.env.VUE_APP_NOTION_API}/api/pages/${id}`;
             
     let axiosConfig = {
         headers: {
@@ -44,6 +46,7 @@ export async function getSingleDatabase(id) {
         }
     };
     const response = await axios.get(url, axiosConfig)
+
     return response.data;
     
 }
