@@ -1,25 +1,26 @@
 const express = require('express');
 const request = require('request');
 const dotenv = require('dotenv');
-//const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
-/*
 app.use(cors({
-    origin: 'https://foo.com'
+    origin: ['http://localhost:8080', 'http://mpblog.me']
+    
 }));
-*/
 
 // Load env vars
 dotenv.config({
     path: '../config/config.env'
 });
 
+/*
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
+*/
 
 app.get('/jokes/random', (req, res) => {
     request(
@@ -60,7 +61,6 @@ app.get('/api/databases', (req, res) => {
             if (error || response.statusCode !== 200) {
                 return res.status(500).json({ type: 'error', message: error });
             }
-            res.set('Access-Control-Allow-Origin', '*');
             res.json(JSON.parse(body));
         }
     )
