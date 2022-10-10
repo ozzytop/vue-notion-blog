@@ -1,8 +1,13 @@
 const express = require('express');
 const request = require('request');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://mpblog.me'
+}));
 
 // Load env vars
 dotenv.config({
