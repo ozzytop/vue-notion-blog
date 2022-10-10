@@ -1,13 +1,15 @@
 const express = require('express');
 const request = require('request');
 const dotenv = require('dotenv');
-const cors = require('cors');
+//const cors = require('cors');
 
 const app = express();
 
+/*
 app.use(cors({
-    origin: 'http://mpblog.me'
+    origin: 'https://foo.com'
 }));
+*/
 
 // Load env vars
 dotenv.config({
@@ -43,7 +45,7 @@ app.get('/keys', (req, res) => {
 
 // Get Notion databases information
 app.get('/api/databases', (req, res) => {
-
+    
     request.post(
         {
             headers: {
@@ -58,6 +60,7 @@ app.get('/api/databases', (req, res) => {
             if (error || response.statusCode !== 200) {
                 return res.status(500).json({ type: 'error', message: error });
             }
+            res.set('Access-Control-Allow-Origin', '*');
             res.json(JSON.parse(body));
         }
     )
