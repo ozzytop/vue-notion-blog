@@ -5,15 +5,21 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors({
-    origin: ['http://localhost:8080', 'http://mpblog.me']
-    
-}));
 
 // Load env vars
 dotenv.config({
     path: '../config/config.env'
 });
+
+
+// Enable origins for the endpoints
+const originAllowed = process.env.CORS_ALLOWED_ORIDIN.split(",");
+console.log(originAllowed);
+
+app.use(cors({
+    origin: originAllowed
+}));
+
 
 /*
 app.use((req, res, next) => {

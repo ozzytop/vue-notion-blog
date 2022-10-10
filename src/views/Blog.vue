@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <div class="post-content">
-                    {{ post.properties.Content.rich_text[0].plain_text }}
+                    {{ $filters.truncate(post.properties.Content.rich_text[0].plain_text, 260, '...') }}
                 </div>
-                <br><br>
+                <br>
             </div>
         </div> 
 
